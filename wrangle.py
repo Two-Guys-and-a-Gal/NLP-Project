@@ -72,11 +72,7 @@ REPOS = [
     "sagarsharma786/SmartPracticeschool-llSPS-INT-1694-Predicting-Life-Expectancy-using-Machine-Learning",
     "mathchi/DS_the-Life-Expectancy-Data",
     "taylor2325/country_GDP_and_life_expectancy_Compared",
-<<<<<<< ours
     "alexsmartens/d3-chart_income-vs-life-expectancy",
-=======
-     "alexsmartens/d3-chart_income-vs-life-expectancy",
->>>>>>> theirs
     "helenaEH/Scatterplot_animation",
     "Junyong-Suh/D3MultiGraph",
     "merijnbeeksma/predict-EoL",
@@ -88,56 +84,6 @@ REPOS = [
     "wrigleyfield/hypotheticalwhite2020mortality",
     "AnshBhatti/COVID-19_Data_Analysis",
     "timriffe/PHDS_HLE_2021",
-<<<<<<< ours
-    "sharmaroshan/Europe-Political-Data-Analysis”,
-    "thegrigorian/WBCrossCountryTimeSeries”,
-    "kanishkan91/R-shiny-animation-applications”,
-    "elcarpins/Li-ionSOCalgorithm_gradientBoosting”,
-    "HamoyeHQ/17-life-expectancy”,
-    "t-redactyl/life-expectancy-analysis”,
-    "SAILResearch/clone-life-expectancy”,
-    "PPgp/bayesLife”,
-    "pjmerica/415-final-Project
-    "SmartPracticeschool/llSPS-INT-1983-Predicting-Life-Expectancy-using-Machine-Learning”,
-    "SmartPracticeschool/llSPS-INT-1644-Predicting-Life-Expectancy-using-Machine-Learning”,
-    "SmartPracticeschool/llSPS-INT-2004-Predicting-Life-Expectancy-using-Machine-Learning”,
-    "hammad93/astropreneurship-hackathon-2019”,
-    "r2ressler/life_exp_r2ressler”,
-    "bneiluj/expectancy”,
-    "vezraabah/Factors-Affecting-Life-Expectancy”,
-    "neilnatarajan/toilet_used”,
-    "AntoineGuiot/OWKIN_PROJECT”,
-    "agbarnett/pollies”,
-    "karthik-panambur/LifeExpectancy”,
-    "MingXXI/LifeExpectancyLinearModel”,
-    "SamruddhiGoswami/LifeExpectancyAnalysis”,
-    "SunpreetSChahal/LifeExpectancyAnalysis”,
-    "YoungAndJin96/Regression_LifeExpectancy”,
-    "FreshOats/LifeExpectancy_v_GDP”,
-    "Abhishek7884/Life1expectancy”,
-    "ptyadana/DV-Data-Visualization-with-Python”,
-    "krinab98/krinab98.github.io”,
-    "kirillwolkow/Data-Analysis-Life-GDP”,
-    "Priyanka11-art/Life-Expectancy-Post-Thoracic-Surgery”,
-    "igordpm/life-expectancy”,
-    "Pradhuman099/Predicting-Life-Expectancy-”,
-    "sejaldua/life-expectancy”,
-    "subhajournal/Life-Expectancy”,
-    "NEXTSLIM/Life-Expectancy”,
-    "mohanakamanooru/Life-Expectancy”,
-    "muoten/life-expectancy”,
-    "Abhinav1092/Life-expectancy”,
-    "tanny459/Lifer-Expectancy”, 
-    "leahdassler/Life_Expectancy”,
-    "cnahmetcn/life_expectancy”,
-    "tgoel5884/Life-Expectancy”,
-    "jmt0221/Life_Expectancy”,
-    "nmshafie1993/Life_Expectancy”, 
-    "mrrehani/Life-Expectancy”, 
-    "siddharth-star/Life-Expectancy”, 
-    "JeremyMiranda/Life-Expectancy”,
-    "SkyThonk/ML-Life-Epectancy-Prediction”
-=======
     "sharmaroshan/Europe-Political-Data-Analysis",
     "thegrigorian/WBCrossCountryTimeSeries",
     "kanishkan91/R-shiny-animation-applications",
@@ -186,8 +132,6 @@ REPOS = [
     "siddharth-star/Life-Expectancy", 
     "JeremyMiranda/Life-Expectancy",
     "SkyThonk/ML-Life-Epectancy-Prediction"
-
->>>>>>> theirs
 ]
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
