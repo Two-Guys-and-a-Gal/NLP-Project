@@ -6,6 +6,7 @@ After doing so, run it like this:
     python acquire.py
 To create the `data.json` file that contains the data.
 """
+#
 import os
 import json
 from typing import Dict, List, Optional, Union, cast
