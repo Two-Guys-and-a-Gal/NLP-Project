@@ -54,7 +54,7 @@ REPOS = [
     "AbeyK/LifeExpectancyCalculator",
     "Moostafa246/LifeExpectancyPythonProject",
     "LindsayBauer/LifeExpectancyAnalysis",
-    "KodPlanet/life_expectancy",
+    #"KodPlanet/life_expectancy",
     "abhijeet65/life_expectancy",
     "JoshuaDaleYoung/Life-Expectancy",
     "MagnusHambleton/life-expectancy",
@@ -99,7 +99,7 @@ REPOS = [
     "hammad93/astropreneurship-hackathon-2019",
     "r2ressler/life_exp_r2ressler",
     "bneiluj/expectancy",
-    "vezraabah/Factors-Affecting-Life-Expectancy",
+    #"vezraabah/Factors-Affecting-Life-Expectancy",
     "neilnatarajan/toilet_used",
     "AntoineGuiot/OWKIN_PROJECT",
     "agbarnett/pollies",
@@ -131,8 +131,7 @@ REPOS = [
     "mrrehani/Life-Expectancy", 
     "siddharth-star/Life-Expectancy", 
     "JeremyMiranda/Life-Expectancy",
-    "SkyThonk/ML-Life-Epectancy-Prediction"
-
+    "SkyThonk/ML-Life-Epectancy-Prediction"   
 ]
 
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
@@ -147,6 +146,7 @@ def github_api_request(url: str) -> Union[List, Dict]:
     response = requests.get(url, headers=headers)
     response_data = response.json()
     if response.status_code != 200:
+        print(f'Error making request to url {url}.')
         raise Exception(
             f"Error response from github api! status code: {response.status_code}, "
             f"response: {json.dumps(response_data)}"
