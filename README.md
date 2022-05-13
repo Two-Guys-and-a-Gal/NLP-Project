@@ -106,7 +106,7 @@ The final DataFrame used to explore the data for this project contains the follo
 |  Variables             |    Definition                              |    DataType             |
 | :--------------------   | :---------------------------------------- | :-------------------- |
 repo                  | The name of the specific repository             | object
-language              | The primary programming language of the repo    |
+language              | The primary programming language of the repo    | object
 readme_contents       | The contents of scraped readme file within the repo | object
 clean*                | The readme contents with text normalized and tokenized | object
 lemmas*               | The cleaned document lemmatized | object
