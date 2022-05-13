@@ -8,17 +8,17 @@ import pandas as pd
 from time import strftime
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import RobustScaler
-
-
+from collections import Counter
 
 
 ###### Functions to add new Features ##########
+
 
 def get_char_count(string):
     """
     This function will take in a string and return the number of characters in it.
     """
-    
+
     return len(string)
 
 
@@ -27,34 +27,47 @@ def get_word_count(string):
     This function will take in a string and return the number of words in that string.
     This function will include repeat words.
     """
-    
-    #Create a list of words separated by a space
+
+    # Create a list of words separated by a space
     words = string.split()
-    
+
     return len(words)
+
 
 def get_unique_words(string):
     """
     This function will take in a string and return the number of unique words in that string.
     """
-    
+
     words = string.split()
     words = set(words)
-    
+
     return len(words)
+
 
 def get_sentence_count(string):
     """
     This function will take in a string and return the number of sentences in that string.
     """
-    
+
     sentences = nltk.sent_tokenize(string)
-    
+
     return len(sentences)
 
 
+def n_most_common_word(string, n=1):
+    """
+    Return the nth most common word in a string
+    """
+    words = string.split()
+    if len(words) < n:
+        return ""
+    word_counts = Counter(words)
+    return word_counts.most_common(n)[n - 1][0]
+
 
 ##### Cleaning Functions ##############
+
 
 def basic_clean(text):
     """
@@ -66,7 +79,7 @@ def basic_clean(text):
         .decode("utf-8", "ignore")
     )
     ##text = re.sub(r"[^\w\s]", " ", text).lower()
-    text = re.sub(r"[^a-zA-Z'\s]", '', text).lower()
+    text = re.sub(r"[^a-zA-Z\s]", "", text).lower()
     return text
 
 
@@ -146,36 +159,63 @@ def keep_top_n_languages(df, n_languages=3):
     )
     return df
 
-def prep_data(df, extra_stopwords=[], exclude_stopwords=[], keep_top_languages = True, add_features=True):
-    '''
+
+def prep_data(
+    df,
+    extra_stopwords=[],
+    exclude_stopwords=[],
+    keep_top_languages=True,
+    add_features=True,
+):
+    """
     This function take in a df with 
     option to pass lists for extra_words and exclude_words and option to 
     remove all rows with Jupyter Notebook in the language column. It
     returns a df with the original readme_contents, a cleaned version and 
     more_clean version that has been lemmatized with stopwords removed.
-    '''
-        
+    """
+
+    # must be above the 'keep_top_languages' option
+    # we manually looked in the data and found the jupyter notebooks were python
+    df["language"].replace({"Jupyter Notebook": "Python"}, inplace=True)
+
+    # takes top 3 languages and makes all others 'other'
     if keep_top_languages:
-        df = keep_top_n_languages(df).copy()   
-    
-    df.rename(columns={'readme_contents':'original'}, inplace=True)
-    
-    df['language'].replace({'Jupyter Notebook': 'Python'},inplace=True)
-    
-    df['clean'] = df['original'].apply(basic_clean)\
-                            .apply(remove_stopwords,
-                                  extra_stopwords=extra_stopwords,
-                                  exclude_stopwords=exclude_stopwords)
-    
-    df['more_clean'] = df['clean'].apply(lemmatize)
-    
+        df = keep_top_n_languages(df).copy()
+
+    # change name to make more readible
+    df.rename(columns={"readme_contents": "original"}, inplace=True)
+
+    df["more_clean"] = (
+        df["original"]r
+        .apply(basic_clean)
+        .apply(
+            remove_stopwords,
+            extra_stopwords=extra_stopwords,
+            exclude_stopwords=exclude_stopwords,
+        )
+        .apply(lemmatize)
+    )
+
+    # df["more_clean"] = df["clean"].apply(lemmatize)
+
     if add_features:
-        df['char_count'] = df.more_clean.apply(get_char_count)
-        df['word_count'] = df.more_clean.apply(get_word_count)
-        df['unique_word_count'] = df.more_clean.apply(get_unique_words)
-        
-    
+        df["char_count"] = df.more_clean.apply(get_char_count)
+        df["word_count"] = df.more_clean.apply(get_word_count)
+        df["unique_word_count"] = df.more_clean.apply(get_unique_words)
+        # add column to df with most common word
+        df["most_common_word"] = df["more_clean"].apply(n_most_common_word)
+        # add column to df with 2nd common word
+        df["2nd_most_common_word"] = df["more_clean"].apply(n_most_common_word, n=2)
+        # add column to df with 3rd common word
+        df["3rd_most_common_word"] = df["more_clean"].apply(n_most_common_word, n=3)
+        # add column to df with 4th common word
+        df["4th_most_common_word"] = df["more_clean"].apply(n_most_common_word, n=4)
+        # add column to df with 5th common word
+        df["5th_most_common_word"] = df["more_clean"].apply(n_most_common_word, n=5)
+
     return df
+
 
 def split_data(X, y):
     """ 
@@ -189,10 +229,6 @@ def split_data(X, y):
         X_train, y_train, stratify=y_train, test_size=0.3, random_state=42
     )
     return (X_train, X_validate, X_test, y_train, y_validate, y_test)
-
-
-
-
 
 
 # obselete
