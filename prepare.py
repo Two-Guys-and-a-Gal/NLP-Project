@@ -99,7 +99,7 @@ def keep_top_n_languages(df, n_languages=3):
     )
     return df
 
-def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = False):
+def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = False, keep_top_languages = True):
     '''
     This function take in a df with 
     option to pass lists for extra_words and exclude_words and option to 
@@ -110,8 +110,8 @@ def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = Fal
     if remove_jupyter:
         df = df[df['language'] != 'Jupyter Notebook'].copy()
         
-    
-    df = keep_top_n_languages(df)
+    if keep_top_languages:
+        df = keep_top_n_languages(df).copy()
     
     df.rename(columns={'readme_contents':'original'}, inplace=True)
     
