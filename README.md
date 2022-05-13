@@ -42,18 +42,18 @@ The goal of this project is to build a Natural Language Processing model that ca
  
  
 #### 2. DESCRIPTION:
-This project was initiated by utilizing web scraping techniques to scrape README files from specified GitHub repositories focused on Life Expectancy projects. The 130 most starred Life Expectancy Repositories were used as the documents within the corpus for this NLP project. 
+This project was initiated by utilizing web scraping techniques to scrape README files from specified GitHub repositories focused on Life Expectancy projects. The 130 most starred Life Expectancy Repositories, as of May 14, 2022, were used as the documents within the corpus for this NLP project. 
 
-After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds, bigrams and trigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files. 
+After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds, bigrams, and trigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files. 
  
  
  
 #### 3.INITIAL QUESTIONS:
-The focus of the project is identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
+The focus of the project is on identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
 ##### Data-Focused Questions
-- ?
-- ?
+- What are the most frequently occuring words?
+- Are there any words that uniquely identify a particular programming language within a readme?
 - ?
 - ?
 - ?
@@ -68,7 +68,7 @@ The focus of the project is identifying the programming language within GitHub r
    + A README File that contains a description of the project and instructions on how to run it. 
    + 2-5 Google Slides that summarize exploratory findings and modeling results, linked in the README. 
 - What format will it be in?
-   + Slide format, with agenda, executive summary, data overview, and modeling results, along with the Github Repo.
+   + Slide format, with agenda, executive summary, corpus overview, and modeling results, along with the Github Repo.
 - Who will it be delivered to?
    + A General Audience
 - How will it be used?
@@ -90,7 +90,7 @@ The focus of the project is identifying the programming language within GitHub r
 #### 5. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
-- [x] wrangle.py - provides reproducible code to automate acquiring, preparing, and splitting the data
+- [x] wrangle.py - provides reproducible code to automate acquiring, preparing, and splitting the corpus
 - [x] Report Jupyter Notebook - provides final presentation-ready wrangle, exploration, modeling, and summary
 - [x] 2-5 Slide Slide Deck - includes 2 visualizations and an executive summary with recommendations and next steps
 
@@ -99,7 +99,7 @@ The focus of the project is identifying the programming language within GitHub r
 ## II. PROJECT DATA CONTEXT
  
 #### 1. DATA DICTIONARY:
-The final DataFrame used to explore the data for this project contains the following variables (columns).  The variables, along with their data types, are defined below:
+The final DataFrame used to explore the corpus for this project contains the following variables (columns).  The variables, along with their data types, are defined below:
  
  
 |  Variables             |    Definition                              |    DataType             |
@@ -124,7 +124,7 @@ Plan➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 - [x]  Review project expectations
 - [x]  Draft project goal to include measures of success
 - [x]  Create questions related to the project
-- [x]  Create questions related to the data
+- [x]  Create questions related to the corpus
 - [x]  Create a plan for completing the project using the data science pipeline
 - [x]  Create a data dictionary framework to define variables and data context
 - [x]  Draft starting hypothesis
@@ -134,31 +134,31 @@ Plan➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 - [x]  Create env file with log-in credentials for GitHub
 - [x]  Store env file in .gitignore to ensure the security of sensitive data
 - [x]  Create wrangle.py module
-- [x]  Store functions needed to acquire the README data for >= 100 GitHub repositories
-     - [x] Copy & Paste >= 100 repo names gtom GitHub into the REPOS variable in the wrangle.py module 
+- [x]  Store functions needed to acquire the README documents for >= 100 GitHub repositories
+     - [x] Copy & Paste >= 100 repo names from GitHub into the REPOS variable in the wrangle.py module 
 - [x]  Ensure all imports needed to run the acquire functions are inside the wrangle.py document
-- [x]  Using Command Line / Terminal, run python acquire.py to create the `data.json` file that contains the data
+- [x]  Using Command Line / Terminal, run ‘python acquire.py’ to create the `data.json` file that contains the corpus
 - [x]  Using Jupyter Notebook or other Python Scripting Program
      - [x]  Run all required imports
-     - [x]  Import functions for acquiring the data from wrangle.py module
-     - [x]  Obtain original size of dataset
+     - [x]  Import functions for acquiring the corpus from wrangle.py module
+     - [x]  Obtain the original size of the corpus
      
  
 #### 3. PREPARE
 Using Jupyter Notebook
-- [x]  Acquire data using functions from the wrangle.py module
-- [x]  Summarize dataset using methods and document observations
-- [x]  Clean data
+- [x]  Acquire corpus using functions from the wrangle.py module
+- [x]  Summarize corpus using methods and document observations
+- [x]  Clean documents/corpus
    - [x] Make all text lowercase
    - [x] Normalize, encode, and decode to remove accented text and special characters
    - [x] Tokenize strings to break words and punctuation into discrete units
    - [x] Stem or Lemmatize words to acquire base words
    - [x] Remove stopwords
 - [x]  Address missing values, data errors, unnecessary data, renaming
-- [x]  Split data into train, validate, and test samples
+- [x]  Split corpus into train, validate, and test samples
 Using Python Scripting Program (Jupyter Notebook)
 - [x]  Create prepare functions within wrangle.py
-- [x]  Store functions needed to prepare the GitHub Repository Corpus data such as:
+- [x]  Store functions needed to prepare the GitHub Repository Corpus such as:
    - [x]  Cleaning Function: to normalize text and remove accented and special characters
    - [x]  Tokenize Function: to break strings down into discrete units
    - [x]  Stem Function: to acquire root words
@@ -185,7 +185,7 @@ Using Jupyter Notebook:
 - [x] Remove unnecessary features
 - [x] Evaluate best performing models using validate set
 - [x] Choose best performing validation model for use on test set
-- [x] Test final model on out-of-sample testing dataset
+- [x] Test final model on out-of-sample testing corpus
 - [x] Summarize performance
 - [x] Interpret and document findings
  
@@ -209,7 +209,7 @@ Using Jupyter Notebook:
  
  
 ## IV. PROJECT MODULES:
-- [x] wrangle.py - provides reproducible python code to automate acquiring, preparing, and splitting the data
+- [x] wrangle.py - provides reproducible python code to automate acquiring, preparing, and splitting the corpus
  
   
 ## V. PROJECT REPRODUCTION:
@@ -219,11 +219,10 @@ Using Jupyter Notebook:
      - [x] Go here and generate a personal access token: https://github.com/settings/tokens
      - [x] You do _not_ need to select any scopes, i.e. leave all the checkboxes unchecked
      - [x] Save the token in your env.py file under the variable `github_token`
-- [x] Add your github username to your env.py file under the variable `github_username`
+- [x] Add your GitHub username to your env.py file under the variable `github_username`
 - [x] Store that env file locally in the repository
 - [x] Make .gitignore and confirm .gitignore is hiding your env.py file
 - [x] Clone our repo (including the wrangle.py)
 - [x] Import python libraries:  pandas, matplotlib, seaborn, numpy, sklearn, nltk, json, re, and unicodedata
 - [x] Follow steps as outlined in the README.md. and work.ipynb
 - [x] Run Final_Report.ipynb to view the final product
-
