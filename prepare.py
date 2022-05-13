@@ -10,6 +10,52 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import RobustScaler
 
 
+
+
+###### Functions to add new Features ##########
+
+def get_char_count(string):
+    """
+    This function will take in a string and return the number of characters in it.
+    """
+    
+    return len(string)
+
+
+def get_word_count(string):
+    """
+    This function will take in a string and return the number of words in that string.
+    This function will include repeat words.
+    """
+    
+    #Create a list of words separated by a space
+    words = string.split()
+    
+    return len(words)
+
+def get_unique_words(string):
+    """
+    This function will take in a string and return the number of unique words in that string.
+    """
+    
+    words = string.split()
+    words = set(words)
+    
+    return len(words)
+
+def get_sentence_count(string):
+    """
+    This function will take in a string and return the number of sentences in that string.
+    """
+    
+    sentences = nltk.sent_tokenize(string)
+    
+    return len(sentences)
+
+
+
+##### Cleaning Functions ##############
+
 def basic_clean(text):
     """
     Basic cleaning of text
@@ -99,7 +145,7 @@ def keep_top_n_languages(df, n_languages=3):
     )
     return df
 
-def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = False):
+def prep_data(df, extra_stopwords=[], exclude_stopwords=[], keep_top_languages = True, add_features=True):
     '''
     This function take in a df with 
     option to pass lists for extra_words and exclude_words and option to 
@@ -107,13 +153,13 @@ def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = Fal
     returns a df with the original readme_contents, a cleaned version and 
     more_clean version that has been lemmatized with stopwords removed.
     '''
-    if remove_jupyter:
-        df = df[df['language'] != 'Jupyter Notebook'].copy()
         
-    
-    df = keep_top_n_languages(df)
+    if keep_top_languages:
+        df = keep_top_n_languages(df).copy()   
     
     df.rename(columns={'readme_contents':'original'}, inplace=True)
+    
+    df['language'].replace({'Jupyter Notebook': 'Python'},inplace=True)
     
     df['clean'] = df['original'].apply(basic_clean)\
                             .apply(remove_stopwords,
@@ -121,6 +167,12 @@ def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = Fal
                                   exclude_stopwords=exclude_stopwords)
     
     df['more_clean'] = df['clean'].apply(lemmatize)
+    
+    if add_features:
+        df['char_count'] = df.more_clean.apply(get_char_count)
+        df['word_count'] = df.more_clean.apply(get_word_count)
+        df['unique_word_count'] = df.more_clean.apply(get_unique_words)
+        
     
     return df
 
@@ -136,6 +188,10 @@ def split_data(X, y):
         X_train, y_train, stratify=y_train, test_size=0.3, random_state=42
     )
     return (X_train, X_validate, X_test, y_train, y_validate, y_test)
+
+
+
+
 
 
 # obselete
