@@ -88,9 +88,9 @@ The focus of the project is identifying the programming language within GitHub r
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
 - [x] wrangle.py - provides reproducible code to automate acquiring, preparing, and splitting the data
-- [x] Report Jupyter Notebook - provides final presentation-ready wrangle and exploration
-- [x] Slide Deck - includes 2 visualizations and an executive summary with recommendations and rationale
-- [x] 5-minute presentation to stakeholders
+- [x] Report Jupyter Notebook - provides final presentation-ready wrangle, exploration, modeling, and summary
+- [x] 2-5 Slide Slide Deck - includes 2 visualizations and an executive summary with recommendations and next steps
+
  
  
 ## II. PROJECT DATA CONTEXT
