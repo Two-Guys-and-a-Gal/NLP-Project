@@ -99,7 +99,7 @@ def keep_top_n_languages(df, n_languages=3):
     )
     return df
 
-def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = False, keep_top_languages = True):
+def prep_data(df, extra_stopwords=[], exclude_stopwords=[], keep_top_languages = True):
     '''
     This function take in a df with 
     option to pass lists for extra_words and exclude_words and option to 
@@ -107,13 +107,13 @@ def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = Fal
     returns a df with the original readme_contents, a cleaned version and 
     more_clean version that has been lemmatized with stopwords removed.
     '''
-    if remove_jupyter:
-        df = df[df['language'] != 'Jupyter Notebook'].copy()
         
     if keep_top_languages:
         df = keep_top_n_languages(df).copy()
     
     df.rename(columns={'readme_contents':'original'}, inplace=True)
+    
+    df['language'].replace({'Jupyter Notebook': 'Python'},inplace=True)
     
     df['clean'] = df['original'].apply(basic_clean)\
                             .apply(remove_stopwords,
