@@ -7,7 +7,9 @@ A Natural Language Processing Approach to Evaluating GitHub Repository Content P
 Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeup   |   Innis Cohort   |   May 2022
  
 ===
- <img src='languages.png' width="500" height="300" align="center"/>
+
+
+ <img src='languages.png' width="650" height="300" align="center"/>
 
 
 Table of Contents
