@@ -65,7 +65,8 @@ def basic_clean(text):
         .encode("ascii", "ignore")
         .decode("utf-8", "ignore")
     )
-    text = re.sub(r"[^\w\s]", " ", text).lower()
+    ##text = re.sub(r"[^\w\s]", " ", text).lower()
+    text = re.sub(r"[^a-zA-Z'\s]", '', text).lower()
     return text
 
 
