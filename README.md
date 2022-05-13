@@ -100,7 +100,7 @@ The final DataFrame used to explore the data for this project contains the follo
  
  
 |  Variables             |    Definition                              |    DataType             |
-| :--------------------:   | :----------------------------------------: | :--------------------: |
+| :--------------------   | :---------------------------------------- | :-------------------- |
 repo                  | The name of the specific repository             | object
 language              | The primary programming language of the repo    |
 readme_contents       | The contents of scraped readme file within the repo | object
