@@ -36,9 +36,8 @@ Table of Contents
  
  
 ## I. PROJECT OVERVIEW
- 
- 
-#### 1.  GOAL:
+
+#### 1. GOAL:
 The goal of this project is to build a Natural Language Processing model that can predict the programming language of projects within specified GitHub repositories, given the text of a README.md file. 
  
  
