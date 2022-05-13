@@ -16,7 +16,7 @@ Table of Contents
 ---
  
 * I. [Project Overview](#i-project-overview)<br>
-[1. Goals](#1-goal)<br>
+[1. Goal](#1-goal)<br>
 [2. Description](#2-description)<br>
 [3. Initial Questions](#3initial-questions)<br>
 [4. Formulating Hypotheses](#4-formulating-hypotheses)<br>
