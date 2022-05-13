@@ -1,5 +1,5 @@
 THE LANGUAGE of LIFE EXPECTANCY: A Natural Language Processing Approach to Evaluating GitHub Repository Content
-
+ 
 ===
         
 Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeup   |   Innis Cohort   |   May 2022
@@ -37,12 +37,12 @@ The goal of this project is to build a Natural Language Processing model that ca
  
  
 #### 2. DESCRIPTION:
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
  
 #### 3.INITIAL QUESTIONS:
 The focus of the project is identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
@@ -56,7 +56,7 @@ The focus of the project is identifying the programming language within GitHub r
 - ?
 - ?
 - ?
-
+ 
  
 ##### Overall Project-Focused Questions
 - What will the end product look like?
@@ -76,7 +76,7 @@ The focus of the project is identifying the programming language within GitHub r
 - How will I know it's good enough?
    + If the exploratory process delivers data-backed insights and the modeling process produces a model to perform better than baseline. 
  
-
+ 
 #### 4. FORMULATING HYPOTHESES
 - Which customer segment is the best?
    + H0: .
@@ -101,24 +101,7 @@ The final DataFrame used to explore the data for this project contains the follo
 |  Variables             |    Definition                              |    DataType             |
 | :--------------------:   | :----------------------------------------: | :--------------------: |
 order_date (index)    |  Date order was placed                          |  datetime64[ns]    |
-order_id              |  Order identifier assigned to each product name for each order | object |
-ship_date             |  Date order was shipped                         | datetime64[ns]       |
-ship_mode             |  Mode of shipping for delivery:  'Standard Class', 'First Class', 'Second Class', 'Same Day'  | object      |
-segment               |  Customer type: Consumer, Cooperate, Home Office  |  object     |
-country               |  Country to which shipment was delivered: 'United States'  |    object   |
-city                  |  City to which shipment was delivered  |  object    |
-state                 |  State to which shipment was delivered  |  object    |
-postal_code           |  Postal code to which shipment was delivered   |  float64   |
-sales                 |  Sale total for product id * quantity in given order ($USD)  | float64     |
-quantity              |  Total number of specified product ordered  | float64     |
-discount              |  Percentage of discount applied to order in decimal form  | float64     |
-profit                |  Sales - Product Cost  | float64     |
-category              |  Category the product belongs to  | object    |
-sub-category          |  Subcategory the product belongs to  |  object    |
-customer_name         |  Name of customer   | object     |
-product_name          |  Name of product  |  object    |
-region_name           |  General area of US where order was placed: 'Central', 'South', 'East', 'West'  |  object    |
-days_to_ship *        |  Number of days from order_date to ship_date  |  int64    |
+ 
 * feature engineered
  
 ## III. PROJECT PLAN - USING THE DATA SCIENCE PIPELINE:
@@ -132,59 +115,78 @@ Plan➜ Acquire ➜ Prepare ➜ Explore ➜ Model & Evaluate ➜ Deliver
 - [x]  Create questions related to the project
 - [x]  Create questions related to the data
 - [x]  Create a plan for completing the project using the data science pipeline
-- [x]  Create a data dictionary to define variables and data context
+- [x]  Create a data dictionary framework to define variables and data context
 - [x]  Draft starting hypothesis
  
 #### 2. ACQUIRE
 - [x]  Create .gitignore
-- [x]  Create env file with log-in credentials
+- [x]  Create env file with log-in credentials for GitHub
 - [x]  Store env file in .gitignore to ensure the security of sensitive data
 - [x]  Create wrangle.py module
-- [x]  Store functions needed to acquire the Superstore dataset from mySQL
-- [x]  Ensure all imports needed to run the functions are inside the wrangle.py document
-- [x]  Using Jupyter Notebook
+- [x]  Store functions needed to acquire the README data for >= 100 GitHub repositories
+     - [x] Copy & Paste >= 100 repo names gtom GitHub into the REPOS variable in the wrangle.py module 
+- [x]  Ensure all imports needed to run the acquire functions are inside the wrangle.py document
+- [x]  Using Command Line / Terminal, run python acquire.py to create the `data.json` file that contains the data
+- [x]  Using Jupyter Notebook or other Python Scripting Program
      - [x]  Run all required imports
-     - [x] Import functions from wrangle.py module
-     - [x]  Summarize dataset using methods and document observations
+     - [x]  Import functions for acquiring the data from wrangle.py module
+     - [x]  Obtain original size of dataset
+     
  
 #### 3. PREPARE
 Using Jupyter Notebook
-- [x]  Import functions from wrangle.py module
+- [x]  Acquire data using functions from the wrangle.py module
 - [x]  Summarize dataset using methods and document observations
 - [x]  Clean data
-- [x]  Features need to be turned into numbers
-- [x]  Categorical features or discrete features need to be numbers that represent those categories
-- [x]  Continuous features may need to be standardized to compare like datatypes
+   - [x] Make all text lowercase
+   - [x] Normalize, encode, and decode to remove accented text and special characters
+   - [x] Tokenize strings to break words and punctuation into discrete units
+   - [x] Stem or Lemmatize words to acquire base words
+   - [x] Remove stopwords
 - [x]  Address missing values, data errors, unnecessary data, renaming
 - [x]  Split data into train, validate, and test samples
 Using Python Scripting Program (Jupyter Notebook)
-- [x]  Create prepare function within wrangle.py
-- [x]  Store functions needed to prepare the Superstore data such as:
-   - [x]  Cleaning Function: to clean data for exploration
-- [x]  Ensure all imports needed to run the functions are inside the wrangle.py document
+- [x]  Create prepare functions within wrangle.py
+- [x]  Store functions needed to prepare the GitHub Repository Corpus data such as:
+   - [x]  Cleaning Function: to normalize text and remove accented and special characters
+   - [x]  Tokenize Function: to break strings down into discrete units
+   - [x]  Stem Function: to acquire root words
+   - [x]  Lemmatize Function: to acquire lexicographically correct root words
+   - [x]  Stopwords Function: to remove meaningless words
+- [x]  Ensure all imports needed to run the prepare functions are added to the wrangle.py document
+
  
 #### 4.EXPLORE
 Using Jupyter Notebook:
-- [x]  Answer key questions about hypotheses and find the best customer segment
+- [x]  Answer key questions about hypotheses 
      - [x]  Run at least two statistical tests
      - [x]  Document findings
 - [x]  Create visualizations with the intent to discover variable relationships
-     - [x]  Identify variables related to best customer segments
+     - [x]  Identify variables related to ___________
      - [x]  Identify any potential data integrity issues
 - [x]  Summarize conclusions, provide clear answers, and summarize takeaways
      - [x] Explain plan of action as deduced from work to this point
  
 #### 5. MODEL & EVALUATE
-- [x] No modeling was necessary for this project, however, modeling could be added to next steps if desired.
+Using Jupyter Notebook:
+- [x] Establish baseline accuracy
+- [x] Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
+- [x] Compare evaluation metrics across models
+- [x] Remove unnecessary features
+- [x] Evaluate best performing models using validate set
+- [x] Choose best performing validation model for use on test set
+- [x] Test final model on out-of-sample testing dataset
+- [x] Summarize performance
+- [x] Interpret and document findings
+ 
 
 #### 6. DELIVERY
-- [x]  Prepare a five-minute presentation using Google Sheets
+- [x]  Prepare a presentation using Google Slides, containing 2-5 slides
      - [x]  Include an introduction of the project and goals
-     - [x]  Provide an executive summary of findings, key takeaways, recommendations, and rationale
-     - [x]  Create a walkthrough of the analysis 
-     - [x]  Include 2 presentation-worthy visualizations that support the problem and recommendation
-     - [x]  Provide final takeaways, recommend a course of action, and next steps
-     - [x]  Be prepared to answer questions following the presentation
+     - [x]  Provide an executive summary of findings, key takeaways, recommendations, and next steps
+     - [x]  Create a walkthrough of the exploration analysis 
+     - [x]  Include 2+ presentation-worthy visualizations that support exploration and modeling
+     - [x]  Provide final takeaways, recommend a course of action for modeling, and next steps
 - [x]  Prepare final notebook in Jupyter Notebook
      - [x]  Create clear walk-though of the Data Science Pipeline using headings and dividers
      - [x]  Explicitly define questions asked during the initial analysis
@@ -202,10 +204,16 @@ Using Jupyter Notebook:
   
 ## V. PROJECT REPRODUCTION:
 ### Steps to Reproduce
- - [x] You will need an env.py file that contains the hostname, username, and password of the mySQL database that contains the superstore_db database
+- [x] Create an env.py file that contains access credentials to GitHub in the form of github_token and github_username variables
+- [x] You will need a GitHub personal access token in place of a password in order to access the contents within GitHub
+     - [x] Go here and generate a personal access token: https://github.com/settings/tokens
+     - [x] You do _not_ need to select any scopes, i.e. leave all the checkboxes unchecked
+     - [x] Save the token in your env.py file under the variable `github_token`
+- [x] Add your github username to your env.py file under the variable `github_username`
 - [x] Store that env file locally in the repository
 - [x] Make .gitignore and confirm .gitignore is hiding your env.py file
 - [x] Clone our repo (including the wrangle.py)
-- [x] Import python libraries:  pandas, matplotlib, seaborn, numpy, and sklearn
-- [x] Follow steps as outlined in the README.md. and mathias_work.ipynb
+- [x] Import python libraries:  pandas, matplotlib, seaborn, numpy, sklearn, nltk, json, re, and unicodedata
+- [x] Follow steps as outlined in the README.md. and work.ipynb
 - [x] Run Final_Report.ipynb to view the final product
+
