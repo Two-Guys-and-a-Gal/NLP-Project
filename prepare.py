@@ -43,6 +43,15 @@ def get_unique_words(string):
     
     return len(words)
 
+def get_sentence_count(string):
+    """
+    This function will take in a string and return the number of sentences in that string.
+    """
+    
+    sentences = nltk.sent_tokenize(string)
+    
+    return len(sentences)
+
 
 
 ##### Cleaning Functions ##############
