@@ -74,11 +74,11 @@ The focus of the project is identifying the programming language within GitHub r
    + A General Audience
 - How will it be used?
    + To display a process that can be duplicated to use Natural Language Processing to sift through large amounts of text in order to classify the text.
-- How will I know I'm done?
+- How will we know we're done?
    + When a model is constructed that can predict accurate programming language better than baseline in addition to deliverables being complete.
-- What is my MVP?
+- What is our MVP?
    + Work through the Data Science Pipeline to produce ONE single model that performs better than baseline to accurately predict the programming language. 
-- How will I know it's good enough?
+- How will we know it's good enough?
    + If the exploratory process delivers data-backed insights and the modeling process produces a model to perform better than baseline. 
  
  
@@ -171,11 +171,10 @@ Using Python Scripting Program (Jupyter Notebook)
 #### 4.EXPLORE
 Using Jupyter Notebook:
 - [x]  Answer key questions about hypotheses 
-     - [x]  Run at least two statistical tests
-     - [x]  Document findings
 - [x]  Create visualizations with the intent to discover variable relationships
-     - [x]  Identify variables related to ___________
+     - [x]  Identify variables related to programming langauge
      - [x]  Identify any potential data integrity issues
+- [x]  Document findings
 - [x]  Summarize conclusions, provide clear answers, and summarize takeaways
      - [x] Explain plan of action as deduced from work to this point
  
