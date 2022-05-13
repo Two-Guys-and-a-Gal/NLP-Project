@@ -153,7 +153,7 @@ REPOS = [
     "emreEys/Estimated-Life-Expectancy-App-Using-Flutter",
     "maheshg23/Life-Expectancy-Predictor-BigDataProject",
     "deeprpatel700/Regression_Analysis_-_Factors_affecting_Life_Expectancy",
-    "​​rv77010/LIFE-EXPECTANCY-DATA-ANALYSIS-FOR-MACHINE-LEARNING",
+    "rv77010/LIFE-EXPECTANCY-DATA-ANALYSIS-FOR-MACHINE-LEARNING",
     "jmaburto/Homicides-and-life-expectancy-in-Brazil",
     "ayu1812/Prediction-of-Life-Expectancy-using-WDI-Indicators",
     "tboudart/Life-Expectancy-Regression-Analysis-and-Classification",
