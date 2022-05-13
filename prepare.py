@@ -100,37 +100,18 @@ def keep_top_n_languages(df, n_languages=3):
     return df
 
 
-def split_data(df, y_value, stratify=True):
-    """ General use function to split data into train and test sets. 
-    Stratify = True is helpful for categorical y values"""
+def split_data(X, y):
+    """ 
+    General use function to split data into train and test sets. 
+    """
     # split the data set with stratifiy if True
-    if stratify:
-        train, test = train_test_split(
-            df, test_size=0.2, random_state=42, stratify=df[y_value]
-        )
-        train, validate = train_test_split(
-            train, test_size=0.3, random_state=42, stratify=train[y_value]
-        )
-    else:  # if stratify is false (for non-categorical y values)
-        train, test = train_test_split(df, test_size=0.2, random_state=42)
-        train, validate = train_test_split(train, test_size=0.3, random_state=42)
-    return (train, validate, test)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, stratify=y, test_size=0.2, random_state=42
+    )
+    X_train, X_validate, y_train, y_validate = train_test_split(
+        X_train, y_train, stratify=y_train, test_size=0.3, random_state=42
+    )
+    return (X_train, X_validate, X_test, y_train, y_validate, y_test)
 
 
-def split_x_y(df, y_value):
-    """split data into x and y"""
-    x = df.drop(columns=[y_value])
-    y = df[y_value]
-    return x, y
-
-
-def get_splits(df, y_value, stratify=True):
-    """
-    Get splits for train, validate, and test
-    """
-    train, validate, test = split_data(df, y_value, stratify=stratify)
-    x_train, y_train = split_x_y(train, y_value)
-    x_validate, y_validate = split_x_y(validate, y_value)
-    x_test, y_test = split_x_y(test, y_value)
-    return (x_train, y_train, x_validate, y_validate, x_test, y_test)
-
+# obselete
