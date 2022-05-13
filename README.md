@@ -9,7 +9,7 @@ Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeu
 ===
 
 
- <img src='languages.png' width="650" height="300" align="center"/>
+ <img src='languages.png' width="7500" height="300" align="center"/>
 
 
 Table of Contents
