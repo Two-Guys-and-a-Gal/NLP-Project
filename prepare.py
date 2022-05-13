@@ -99,6 +99,29 @@ def keep_top_n_languages(df, n_languages=3):
     )
     return df
 
+def prep_data(df, extra_stopwords=[], exclude_stopwords=[], remove_jupyter = False):
+    '''
+    This function take in a df and the string name for a text column with 
+    option to pass lists for extra_words and exclude_words and
+    returns a df with the text article title, original text, stemmed text,
+    lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
+    '''
+    if remove_jupyter:
+        df = df[df['language'] != 'Jupyter Notebook'].copy()
+        
+    
+    df = keep_top_n_languages(df)
+    
+    df.rename(columns={'readme_contents':'original'}, inplace=True)
+    
+    df['clean'] = df['original'].apply(basic_clean)\
+                            .apply(remove_stopwords,
+                                  extra_stopwords=extra_stopwords,
+                                  exclude_stopwords=exclude_stopwords)
+    
+    df['more_clean'] = df['clean'].apply(lemmatize)
+    
+    return df
 
 def split_data(X, y):
     """ 
