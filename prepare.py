@@ -200,6 +200,7 @@ def prep_data(
     # df["more_clean"] = df["clean"].apply(lemmatize)
 
     if add_features:
+        df["unique_words"] = df["more_clean"].apply(get_unique_words)
         df["char_count"] = df.more_clean.apply(get_char_count)
         df["word_count"] = df.more_clean.apply(get_word_count)
         df["unique_word_count"] = df.more_clean.apply(get_unique_words)
