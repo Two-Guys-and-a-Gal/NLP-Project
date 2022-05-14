@@ -187,7 +187,7 @@ def prep_data(
     df.rename(columns={"readme_contents": "original"}, inplace=True)
 
     df["more_clean"] = (
-        df["original"]r
+        df["original"]
         .apply(basic_clean)
         .apply(
             remove_stopwords,
