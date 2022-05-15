@@ -52,11 +52,11 @@ After acquiring and preparing the corpus, our team conducted natural language pr
 The focus of the project is on identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
 ##### Data-Focused Questions
-- 1. What are the most frequently occuring words?
-- 2. Are there any words that uniquely identify one of the coding langauges?
-- 3. What are the most frequently occuring bigrams?
-- 4. Are there any bigrams that uniquely identify one of the coding langauges?
-- 5. Is word count within the README significantly different between the top 4 programming langauges?
+- What are the most frequently occuring words?
+- Are there any words that uniquely identify one of the coding langauges?
+- What are the most frequently occuring bigrams?
+- Are there any bigrams that uniquely identify one of the coding langauges?
+- Is word count within the README significantly different between the top 4 programming langauges?
  
  
 ##### Overall Project-Focused Questions
