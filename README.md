@@ -79,7 +79,7 @@ The focus of the project is on identifying the programming language within GitHu
  
  
 #### 4. FORMULATING HYPOTHESES
-- Which customer segment is the best?
+- Which programming language __________?
    + H0: .
    + H1: .
  
@@ -103,12 +103,17 @@ The final DataFrame used to explore the corpus for this project contains the fol
 | :--------------------   | :---------------------------------------- | :-------------------- |
 repo                  | The name of the specific repository             | object
 language              | The primary programming language of the repo    | object
-readme_contents       | The contents of scraped readme file within the repo | object
-clean*                | The readme contents with text normalized and tokenized | object
-lemmas*               | The cleaned document lemmatized | object
-stemmed*              | The cleaned document stemmed | object
-more_cleaned*         | The lemmatized document with stopwords removed | object    
-
+original              | The contents of scraped readme file within the repo | object
+more_clean*           | The readme contents cleaned with prep_data function | object
+unique_words*         | The number of unique words in the more_clean document   | object
+char_count*           | The number of characters within the more_clean document | object
+word_count*           | The number of words within the more_clean document | object
+unique_word_count*    | The number of unique words in the more_clean document | object
+most_common_word*     | The word that occured most within the document | object
+2nd_most_common_word* | The 2nd most commonly occuring word within the document | object
+3rd_most_common_word* | The 3rd most commonly occuring word within the document | object
+4th_most_common_word* | The 4th most commonly occuring word within the document | object
+5th_most_common_word* | The 5th most commonly occuring word within the document | object
  
 * feature engineered
  
