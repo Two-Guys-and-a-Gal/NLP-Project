@@ -12,6 +12,10 @@ Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeu
  <img src='languages.png' width="7500" height="300" align="center"/>
 
 
+===
+
+
+
 Table of Contents
 ---
  
@@ -20,7 +24,8 @@ Table of Contents
 [2. Description](#2-description)<br>
 [3. Initial Questions](#3initial-questions)<br>
 [4. Formulating Hypotheses](#4-formulating-hypotheses)<br>
-[5. Deliverables](#5-deliverables)<br>
+[5. Key Findings](#5-key_findings)<br>
+[6. Deliverables](#6-deliverables)<br>
 * II. [Project Data Context](#ii-project-data-context)<br>
 [1. Data Dictionary](#1-data-dictionary)<br>
 * III. [Project Plan - Data Science Pipeline](#iii-project-plan---using-the-data-science-pipeline)<br>
@@ -47,9 +52,9 @@ This project was initiated by utilizing web scraping techniques to scrape README
 After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds, bigrams, and trigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files. 
  
  
- 
 #### 3.INITIAL QUESTIONS:
 The focus of the project is on identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
+ 
  
 ##### Data-Focused Questions
 - What are the most frequently occuring words?
@@ -65,7 +70,8 @@ The focus of the project is on identifying the programming language within GitHu
    + A README File that contains a description of the project and instructions on how to run it. 
    + 2-5 Google Slides that summarize exploratory findings and modeling results, linked in the README. 
 - What format will it be in?
-   + Slide format, with agenda, executive summary, corpus overview, and modeling results, along with the Github Repo.
+   + Github Repo with wrange.py, draft & final reports, and link to slide deck. 
+   + Slide format, with agenda, executive summary, corpus overview, and modeling results.
 - Who will it be delivered to?
    + A General Audience
 - How will it be used?
@@ -82,9 +88,12 @@ The focus of the project is on identifying the programming language within GitHu
 - Which programming language __________?
    + H0: .
    + H1: .
+
+
+#### 5. KEY FINDINGS:
+
  
- 
-#### 5. DELIVERABLES:
+#### 6. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
 - [x] .py modules - provide reproducible code to automate acquiring, preparing, and splitting the corpus
