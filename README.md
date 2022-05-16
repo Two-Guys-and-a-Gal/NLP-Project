@@ -91,7 +91,7 @@ The focus of the project is on identifying the programming language within GitHu
 
 
 #### 5. KEY FINDINGS:
-
+The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
  
 #### 6. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
