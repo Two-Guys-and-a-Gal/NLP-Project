@@ -87,3 +87,9 @@ def vis_two():
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.title('% of Top 10 Word Frequency by Language')
     plt.show()
+    
+    
+def vis_five():
+    ax = sns.barplot(data=train, y='word_count', x='language', ci=None)
+    ax.set(title = 'Average README Word Count by Programming Language', xlabel='Top 4 Programming Languages', ylabel='Word Count')
+    plt.show()
