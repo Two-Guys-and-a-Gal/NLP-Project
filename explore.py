@@ -12,6 +12,8 @@ import prepare as prep
 
 from env import github_token, github_username
 
+# import for statistical testing
+import scipy.stats as stats
 from wordcloud import WordCloud
 
 from sklearn.model_selection import train_test_split
@@ -93,3 +95,22 @@ def vis_five():
     ax = sns.barplot(data=train, y='word_count', x='language', ci=None)
     ax.set(title = 'Average README Word Count by Programming Language', xlabel='Top 4 Programming Languages', ylabel='Word Count')
     plt.show()
+    
+def mann_whitney():
+    # Establish variables for statistical testing
+    all_but_r = train[train.language != 'R'].word_count
+    r = train[train.language == 'R'].word_count
+
+    # Set Alpha
+    alpha = 0.05
+
+    # Run Mann Whitney Test
+    stat, p = stats.mannwhitneyu(all_but_r, r, method="exact")
+    # Obtain test statistics through a print statement
+    print(f'Mann Whitney Test Statistics: Statistic  {stat}, P Value {p}')
+
+    # Evaluate outcome of statistical testing
+    if p < alpha:
+        print("We reject $H_{0}$")
+    else:
+        print("We fail to reject $H_{0}$")
