@@ -85,10 +85,7 @@ The focus of the project is on identifying the programming language within GitHu
  
  
 #### 4. FORMULATING HYPOTHESES
-- Which programming language __________?
-   + H0: .
-   + H1: .
-
+The initial hypothesis of the project was that repositories using Python would have a higher average word count in comparison to other programming languages. The thought behind this was Python is known for its focus on consistent documentation and has a robust community to support consistent expectations for documentation. We also thought programing languages would have distinct unique words and bigrams (word pairs) that would differentiate one from the other. These thoughts and the subsequent hypothesis drove the initial exploratory questions for this project.
 
 #### 5. KEY FINDINGS:
 The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
