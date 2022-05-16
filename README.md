@@ -12,6 +12,10 @@ Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeu
  <img src='languages.png' width="7500" height="300" align="center"/>
 
 
+===
+
+
+
 Table of Contents
 ---
  
@@ -20,7 +24,8 @@ Table of Contents
 [2. Description](#2-description)<br>
 [3. Initial Questions](#3initial-questions)<br>
 [4. Formulating Hypotheses](#4-formulating-hypotheses)<br>
-[5. Deliverables](#5-deliverables)<br>
+[5. Key Findings](#5-key-findings)<br>
+[6. Deliverables](#6-deliverables)<br>
 * II. [Project Data Context](#ii-project-data-context)<br>
 [1. Data Dictionary](#1-data-dictionary)<br>
 * III. [Project Plan - Data Science Pipeline](#iii-project-plan---using-the-data-science-pipeline)<br>
@@ -47,19 +52,16 @@ This project was initiated by utilizing web scraping techniques to scrape README
 After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds, bigrams, and trigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files. 
  
  
- 
 #### 3.INITIAL QUESTIONS:
 The focus of the project is on identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
+ 
 ##### Data-Focused Questions
 - What are the most frequently occuring words?
-- Are there any words that uniquely identify a particular programming language within a readme?
-- ?
-- ?
-- ?
-- ?
-- ?
-- ?
+- Are there any words that uniquely identify one of the coding langauges?
+- What are the most frequently occuring bigrams?
+- Are there any bigrams that uniquely identify one of the coding langauges?
+- Is word count within the README significantly different between the top 4 programming langauges?
  
  
 ##### Overall Project-Focused Questions
@@ -68,7 +70,8 @@ The focus of the project is on identifying the programming language within GitHu
    + A README File that contains a description of the project and instructions on how to run it. 
    + 2-5 Google Slides that summarize exploratory findings and modeling results, linked in the README. 
 - What format will it be in?
-   + Slide format, with agenda, executive summary, corpus overview, and modeling results, along with the Github Repo.
+   + Github Repo with wrange.py, draft & final reports, and link to slide deck. 
+   + Slide format, with agenda, executive summary, corpus overview, and modeling results.
 - Who will it be delivered to?
    + A General Audience
 - How will it be used?
@@ -82,17 +85,20 @@ The focus of the project is on identifying the programming language within GitHu
  
  
 #### 4. FORMULATING HYPOTHESES
-- Which customer segment is the best?
+- Which programming language __________?
    + H0: .
    + H1: .
+
+
+#### 5. KEY FINDINGS:
+The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
  
- 
-#### 5. DELIVERABLES:
+#### 6. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
-- [x] wrangle.py - provides reproducible code to automate acquiring, preparing, and splitting the corpus
-- [x] Report Jupyter Notebook - provides final presentation-ready wrangle, exploration, modeling, and summary
-- [x] 2-5 Slide Slide Deck - includes 2 visualizations and an executive summary with recommendations and next steps
+- [x] .py modules - provide reproducible code to automate acquiring, preparing, and splitting the corpus
+- [x] Final Jupyter Notebook - provides presentation-ready wrangle, exploration, modeling, and summary
+- [x] 2-5 Slide Slide Deck - includes an executive summary, visualizations, recommendations & next steps
 
  
  
@@ -104,14 +110,19 @@ The final DataFrame used to explore the corpus for this project contains the fol
  
 |  Variables             |    Definition                              |    DataType             |
 | :--------------------   | :---------------------------------------- | :-------------------- |
-repo                  | The name of the specific repository             | object
-language              | The primary programming language of the repo    | object
-readme_contents       | The contents of scraped readme file within the repo | object
-clean*                | The readme contents with text normalized and tokenized | object
-lemmas*               | The cleaned document lemmatized | object
-stemmed*              | The cleaned document stemmed | object
-more_cleaned*         | The lemmatized document with stopwords removed | object    
-
+repo                  | The name of the specific repository                     | object
+language              | The primary programming language of the repo            | object
+original              | The contents of scraped readme file within the repo     | object
+more_clean*           | The readme contents cleaned with prep_data function     | object
+unique_words*         | The number of unique words in the more_clean document   | object
+char_count*           | The number of characters within the more_clean document | object
+word_count*           | The number of words within the more_clean document      | object
+unique_word_count*    | The number of unique words in the more_clean document   | object
+most_common_word*     | The word that occured most within the document          | object
+2nd_most_common_word* | The 2nd most commonly occuring word within the document | object
+3rd_most_common_word* | The 3rd most commonly occuring word within the document | object
+4th_most_common_word* | The 4th most commonly occuring word within the document | object
+5th_most_common_word* | The 5th most commonly occuring word within the document | object
  
 * feature engineered
  
