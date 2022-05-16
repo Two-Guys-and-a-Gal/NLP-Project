@@ -187,8 +187,10 @@ def prep_data(
     """
     
     # drop rows with nulls
-    df = df.dropna(axis = 0)
-
+    df = df.dropna(axis = 0) 
+    # remove rows with a zero word count
+    df = df[df['readme_contents'].str.len() > 0]
+   
     # must be above the 'keep_top_languages' option
     # we manually looked in the data and found the jupyter notebooks were python
     df["language"].replace({"Jupyter Notebook": "Python"}, inplace=True)
