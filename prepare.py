@@ -34,7 +34,18 @@ def get_word_count(string):
     return len(words)
 
 
-def get_unique_words(string):
+def get_unique_words(text):
+    """
+    Get unique words in dataframe
+    """
+
+    words = text.split()
+    unique_words = set(words)
+    new_string = " ".join(unique_words)
+    return new_string
+
+
+def get_unique_word_count(string):
     """
     This function will take in a string and return the number of unique words in that string.
     """
@@ -203,7 +214,7 @@ def prep_data(
         df["unique_words"] = df["more_clean"].apply(get_unique_words)
         df["char_count"] = df.more_clean.apply(get_char_count)
         df["word_count"] = df.more_clean.apply(get_word_count)
-        df["unique_word_count"] = df.more_clean.apply(get_unique_words)
+        df["unique_word_count"] = df.more_clean.apply(get_unique_word_count)
         # add column to df with most common word
         df["most_common_word"] = df["more_clean"].apply(n_most_common_word)
         # add column to df with 2nd common word
