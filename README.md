@@ -87,9 +87,9 @@ The focus of the project is on identifying the programming language within GitHu
 #### 5. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
 - [x] Draft Jupyter Notebook - provides all steps taken to produce the project
-- [x] wrangle.py - provides reproducible code to automate acquiring, preparing, and splitting the corpus
-- [x] Report Jupyter Notebook - provides final presentation-ready wrangle, exploration, modeling, and summary
-- [x] 2-5 Slide Slide Deck - includes 2 visualizations and an executive summary with recommendations and next steps
+- [x] .py modules - provide reproducible code to automate acquiring, preparing, and splitting the corpus
+- [x] Final Jupyter Notebook - provides presentation-ready wrangle, exploration, modeling, and summary
+- [x] 2-5 Slide Slide Deck - includes an executive summary, visualizations, recommendations & next steps
 
  
  
@@ -102,7 +102,7 @@ The final DataFrame used to explore the corpus for this project contains the fol
 |  Variables             |    Definition                              |    DataType             |
 | :--------------------   | :---------------------------------------- | :-------------------- |
 repo                  | The name of the specific repository                     | object
-language              | The primary programming language of the repository      | object
+language              | The primary programming language of the repo            | object
 original              | The contents of scraped readme file within the repo     | object
 more_clean*           | The readme contents cleaned with prep_data function     | object
 unique_words*         | The number of unique words in the more_clean document   | object
