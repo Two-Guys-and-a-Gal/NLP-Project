@@ -114,7 +114,7 @@ repo                  | The name of the specific repository                     
 language              | The primary programming language of the repo            | object
 original              | The contents of scraped readme file within the repo     | object
 more_clean*           | The readme contents cleaned with prep_data function     | object
-unique_words*         | The number of unique words in the more_clean document   | object
+unique_words*         | The unique words in each more_clean document            | object
 char_count*           | The number of characters within the more_clean document | object
 word_count*           | The number of words within the more_clean document      | object
 unique_word_count*    | The number of unique words in the more_clean document   | object
@@ -168,14 +168,14 @@ Using Jupyter Notebook
 - [x]  Address missing values, data errors, unnecessary data, renaming
 - [x]  Split corpus into train, validate, and test samples
 Using Python Scripting Program (Jupyter Notebook)
-- [x]  Create prepare functions within wrangle.py
+- [x]  Create prepare functions within prepare.py
 - [x]  Store functions needed to prepare the GitHub Repository Corpus such as:
    - [x]  Cleaning Function: to normalize text and remove accented and special characters
    - [x]  Tokenize Function: to break strings down into discrete units
    - [x]  Stem Function: to acquire root words
    - [x]  Lemmatize Function: to acquire lexicographically correct root words
    - [x]  Stopwords Function: to remove meaningless words
-- [x]  Ensure all imports needed to run the prepare functions are added to the wrangle.py document
+- [x]  Ensure all imports needed to run the prepare functions are added to the prepare.py document
 
  
 #### 4.EXPLORE
@@ -220,8 +220,8 @@ Using Jupyter Notebook:
  
  
 ## IV. PROJECT MODULES:
-- [x] wrangle.py - provides reproducible python code to automate acquiring, preparing, and splitting the corpus
- 
+- [x] wrangle.py - provides reproducible python code to automate acquiring, 
+- [x] prepare.py - provides reproducible python code to automate cleaning, preparing, and splitting the corpus
   
 ## V. PROJECT REPRODUCTION:
 ### Steps to Reproduce
