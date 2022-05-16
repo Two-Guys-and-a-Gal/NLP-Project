@@ -166,7 +166,7 @@ def keep_top_n_languages(df, n_languages=3):
     top_language_counts = df["language"].value_counts().head(n_languages).index.tolist()
     # make all non-top languages 'other'
     df["language"] = df["language"].apply(
-        lambda x: "other" if x not in top_language_counts else x
+        lambda x: "Other" if x not in top_language_counts else x
     )
     return df
 
@@ -185,6 +185,9 @@ def prep_data(
     returns a df with the original readme_contents, a cleaned version and 
     more_clean version that has been lemmatized with stopwords removed.
     """
+    
+    # drop rows with nulls
+    df = df.dropna(axis = 0)
 
     # must be above the 'keep_top_languages' option
     # we manually looked in the data and found the jupyter notebooks were python
@@ -228,10 +231,22 @@ def prep_data(
 
     return df
 
+def split_data(df):
+    
+    '''
+    This function takes in a dataframe, then splits and returns the data as train, validate, and test sets, 
+    using random state 123.
+    '''
+    # split data into 2 groups, train_validate and test, assigning test as 20% of the dataset
+    train_validate, test = train_test_split(df, test_size=.2, random_state=123)
+    # split train_validate into 2 groups with 
+    train, validate = train_test_split(train_validate, test_size=.3, random_state=123)
+    return train, validate, test
 
-def split_data(X, y):
+
+def split_data_xy(X, y):
     """ 
-    General use function to split data into train and test sets. 
+    . 
     """
     # split the data set with stratifiy if True
     X_train, X_test, y_train, y_test = train_test_split(
