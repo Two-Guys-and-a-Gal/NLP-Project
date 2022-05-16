@@ -234,7 +234,7 @@ def prep_data(
 def split_data(df):
     
     '''
-    This function takes in a dataframe, then splits and returns the data as train, validate, and test sets, 
+    This function takes in a dataframe, then splits and returns the data as train, validate, and test sets 
     using random state 123.
     '''
     # split data into 2 groups, train_validate and test, assigning test as 20% of the dataset
@@ -245,9 +245,10 @@ def split_data(df):
 
 
 def split_data_xy(X, y):
-    """ 
-    . 
-    """
+    '''
+    This function takes in X and y variables as strings, then splits and returns the data as 
+    X_train, X_validate, X_test, y_train, y_validate, and y_test sets using random state 42.
+    '''
     # split the data set with stratifiy if True
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, stratify=y, test_size=0.2, random_state=42
