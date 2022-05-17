@@ -47,9 +47,9 @@ The goal of this project is to build a Natural Language Processing model that ca
  
  
 #### 2. DESCRIPTION:
-This project was initiated by utilizing web scraping techniques to scrape README files from specified GitHub repositories focused on Life Expectancy projects. The 130 most starred Life Expectancy Repositories, as of May 14, 2022, were used as the documents within the corpus for this NLP project. 
+This project was initiated by utilizing web scraping techniques to scrape README files from specified GitHub repositories focused on Life Expectancy projects. The 166 most starred Life Expectancy Repositories, as of May 14, 2022, were used as the documents within the corpus for this NLP project.
 
-After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds, bigrams, and trigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files. 
+After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds and bigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files.
  
  
 #### 3.INITIAL QUESTIONS:
