@@ -199,7 +199,8 @@ Using Jupyter Notebook:
 #### 5. MODEL & EVALUATE
 Using Jupyter Notebook:
 - [x]  Establish baseline accuracy
-- [x]  Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
+- [x]  Create two types of dataframes to run through models (TF-IDF, and Feature Engineering)
+- [x]  Train and fit multiple (1000+) models with varying algorithms and/or hyperparameters
 - [x]  Compare evaluation metrics across models
 - [x]  Remove unnecessary features
 - [x]  Evaluate best performing models using validate set
@@ -234,6 +235,7 @@ Using Jupyter Notebook:
 - [x] wrangle.py - provides reproducible python code to automate acquisition 
 - [x] prepare.py - provides reproducible python code to automate cleaning, preparing, and splitting the corpus
 - [x] explore.py - provides reproducible python code to automate exploration and visualization
+- [x] model.py - provides reproducible python code to automate modeling and evaluation
   
 ## V. PROJECT REPRODUCTION:
 ### Steps to Reproduce
