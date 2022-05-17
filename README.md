@@ -68,26 +68,6 @@ The focus of the project is on identifying the programming language within GitHu
 - Are there any bigrams that uniquely identify one of the coding langauges?
 - Is word count within the README significantly different between the top 4 programming langauges?
  
- 
-##### Overall Project-Focused Questions
-- What will the end product look like?
-   + A finalized Jupyter Notebook that contains the analysis for the project.
-   + A README File that contains a description of the project and instructions on how to run it. 
-   + 2-5 Google Slides that summarize exploratory findings and modeling results, linked in the README. 
-- What format will it be in?
-   + Github Repo with wrange.py, draft & final reports, and link to slide deck. 
-   + Slide format, with agenda, executive summary, corpus overview, and modeling results.
-- Who will it be delivered to?
-   + A General Audience
-- How will it be used?
-   + To display a process that can be duplicated to use Natural Language Processing to sift through large amounts of text in order to classify the text.
-- How will we know we're done?
-   + When a model is constructed that can predict accurate programming language better than baseline in addition to deliverables being complete.
-- What is our MVP?
-   + Work through the Data Science Pipeline to produce ONE single model that performs better than baseline to accurately predict the programming language. 
-- How will we know it's good enough?
-   + If the exploratory process delivers data-backed insights and the modeling process produces a model to perform better than baseline. 
- 
   
 #### 5. KEY FINDINGS:
 The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
@@ -116,7 +96,7 @@ The final DataFrame used to explore the corpus for this project contains the fol
 |  Variables             |    Definition                              |    DataType             |
 | :--------------------   | :---------------------------------------- | :-------------------- |
 repo                  | The name of the specific repository                     | object
-language              | The primary programming language of the repo            | object
+language (target variable) | The primary programming language of the repo            | object
 original              | The contents of scraped readme file within the repo     | object
 more_clean*           | The readme contents cleaned with prep_data function     | object
 unique_words*         | The unique words in each more_clean document            | object
