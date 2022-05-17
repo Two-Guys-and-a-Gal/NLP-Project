@@ -54,12 +54,15 @@ def get_common_unique_words(text, threshold=5):
     Get common unique words in dataframe, aka words that occur in multiple readme's
     a word must appear in at least threshold readmes to be considered a common word
     """
-
+    #splitting text into individual words
     words = text.split()
+    #using nltk.counter to count ngrams
     counter = Counter(words)
+    #Create a list with all of the unique words using our default threshold of at least 5
     common_unique_words = [
         word for word, count in counter.items() if count >= threshold
     ]
+    #Join the list with a new string
     new_string = " ".join(common_unique_words)
     return new_string
 
@@ -192,9 +195,10 @@ def vis_one_a():
     4 coding languages. It calculates the value_counts for word_counts by language then plots a
     horizontal bar graph.
     """
+    #Sorting values in the word count data frame using count for all words
     word_counts.sort_values("all", ascending=False).head(5)[
         ["other", "python", "r", "html"]
-    ].plot.barh(width= .85)
+    ].plot.barh(width= .85) #Adjust width size of the bars for visual clarity
     plt.title("Word Count for top 5 Most Frequent Overall Words")
     plt.show()
 
@@ -206,14 +210,14 @@ def vis_one_b():
     """
     (
         word_counts.sort_values("all", ascending=False)
-        .head(10)
-        .apply(lambda row: row / row["all"], axis=1)
-        .drop(columns="all")
-        .sort_values(by="other")
+        .head(10) #Sorting values in the word count data frame using count for all words and displaying only top 10
+        .apply(lambda row: row / row["all"], axis=1) # Calculating percentage of word frequency by language by dividing by the overall frequency
+        .drop(columns="all") #Dropping the overall frequency
+        .sort_values(by="other") #Sorting by 'other' language
         .plot.barh(stacked=True, width=1, ec="k")
     )
 
-    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)
+    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0) #Placing the legend outside of the visualization for clarity
     plt.title("% of Top 10 Word Frequency by Language")
     plt.show()
 
@@ -229,16 +233,16 @@ def vis_two():
     new_df["unique_words"] = new_df["unique_to_language"].apply(
         lambda x: len(x.split())
     )
-    new_df.sort_values(by="unique_words", ascending=False, inplace=True)
+    new_df.sort_values(by="unique_words", ascending=False, inplace=True) #Sorting values of unique words in descending order
     new_df.plot.bar(
         x="language",
         y="unique_words",
-        color=["seagreen", "steelblue", "brown", "slateblue"],
+        color=["seagreen", "steelblue", "brown", "slateblue"], #plotting values and assigning colors
     )
     plt.xlabel('Language')
-    plt.xticks(rotation = 45)
+    plt.xticks(rotation = 45) #Rotating the xticks 45 degrees for readability
     plt.title("Number of Words Unique to Each Language")
-    plt.legend().set_visible(False)
+    plt.legend().set_visible(False) #Removing the legend for visual clarity
     # determine figure size
     plt.rc("figure", figsize=(20, 8))
     # determine font size
@@ -259,16 +263,16 @@ def vis_three():
     new_df["unique_bigrams"] = new_df["bigrams_unique_to_language"].apply(
         lambda x: len(x)
     )
-    new_df.sort_values(by="unique_bigrams", ascending=False, inplace=True)
+    new_df.sort_values(by="unique_bigrams", ascending=False, inplace=True) #Sorting values of unique bigrams in descending order
     new_df.plot.bar(
         x="language",
         y="unique_bigrams",
-        color=["brown", "seagreen", "steelblue", "slateblue"],
+        color=["brown", "seagreen", "steelblue", "slateblue"], #plotting values and assigning colors
     )
     plt.xlabel('Language')
-    plt.xticks(rotation = 45)
+    plt.xticks(rotation = 45) #Rotating the xticks 45 degrees for readability
     plt.title("Number of Common Bigrams Unique to each Language")
-    plt.legend().set_visible(False)
+    plt.legend().set_visible(False) #Removing the legend for visual clarity
     plt.show()
 
 
@@ -284,20 +288,24 @@ def vis_four():
     fig.set_size_inches(35, 12)
     # set title
     plt.suptitle("Top 5 Bigrams by Programming Language", fontsize=35)
+    #Sorting values and setting bar width and color
     top_5_other_bigrams.sort_values().plot.barh(
         color="steelblue", width=0.9, ax=axs[0, 0]
     )
     axs[0, 0].set_title("Other")
     # axs[0,0].set_ylabel('Bigram')
 
+    #Sorting values and setting bar width and color
     top_5_python_bigrams.sort_values().plot.barh(
         color="seagreen", width=0.9, ax=axs[0, 1]
     )
     axs[0, 1].set_title("Python")
 
+    #Sorting values and setting bar width and color
     top_5_html_bigrams.sort_values().plot.barh(color="brown", width=0.9, ax=axs[1, 0])
     axs[1, 0].set_title("HTML")
 
+    #Sorting values and setting bar width and color
     top_5_r_bigrams.sort_values().plot.barh(color="slateblue", width=0.9, ax=axs[1, 1])
     axs[1, 1].set_title("R")
     plt.show()
@@ -308,7 +316,10 @@ def vis_five():
     This function creates a average number of words in a README by top 4 programming language. 
     It plots a bar graph with the average number of words by programming language.
     """
+    
+    #Sorting values by word count in descending order for visual clarity
     train.sort_values(by="word_count", ascending=False, inplace=True)
+    #Creating a barpplot using seaborn
     ax = sns.barplot(data=train, y="word_count", x="language", ci=None)
     ax.set(
         title="Average README Word Count by Programming Language",
