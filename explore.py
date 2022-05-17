@@ -194,7 +194,7 @@ def vis_one_a():
     """
     word_counts.sort_values("all", ascending=False).head(5)[
         ["other", "python", "r", "html"]
-    ].plot.barh()
+    ].plot.barh(width= .85)
     plt.title("Word Count for top 5 Most Frequent Overall Words")
     plt.show()
 
@@ -235,7 +235,9 @@ def vis_two():
         y="unique_words",
         color=["seagreen", "steelblue", "brown", "slateblue"],
     )
-    plt.title("Number of Words Unique to each Language")
+    plt.xlabel('Language')
+    plt.xticks(rotation = 45)
+    plt.title("Number of Words Unique to Each Language")
     plt.legend().set_visible(False)
     # determine figure size
     plt.rc("figure", figsize=(20, 8))
@@ -263,6 +265,8 @@ def vis_three():
         y="unique_bigrams",
         color=["brown", "seagreen", "steelblue", "slateblue"],
     )
+    plt.xlabel('Language')
+    plt.xticks(rotation = 45)
     plt.title("Number of Common Bigrams Unique to each Language")
     plt.legend().set_visible(False)
     plt.show()
@@ -279,7 +283,7 @@ def vis_four():
     # set figure size
     fig.set_size_inches(35, 12)
     # set title
-    plt.suptitle("Top 5 Bigrams by Programming Language", fontsize=24)
+    plt.suptitle("Top 5 Bigrams by Programming Language", fontsize=35)
     top_5_other_bigrams.sort_values().plot.barh(
         color="steelblue", width=0.9, ax=axs[0, 0]
     )
@@ -304,6 +308,7 @@ def vis_five():
     This function creates a average number of words in a README by top 4 programming language. 
     It plots a bar graph with the average number of words by programming language.
     """
+    train.sort_values(by="word_count", ascending=False, inplace=True)
     ax = sns.barplot(data=train, y="word_count", x="language", ci=None)
     ax.set(
         title="Average README Word Count by Programming Language",
