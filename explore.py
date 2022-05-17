@@ -279,7 +279,7 @@ def vis_four():
     # set figure size
     fig.set_size_inches(35, 12)
     # set title
-    plt.suptitle("Top 5 Bigrams")
+    plt.suptitle("Top 5 Bigrams by Programming Language", fontsize=24)
     top_5_other_bigrams.sort_values().plot.barh(
         color="steelblue", width=0.9, ax=axs[0, 0]
     )
