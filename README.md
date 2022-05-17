@@ -50,11 +50,11 @@ The goal of this project is to build a Natural Language Processing model that ca
 #### 2. DESCRIPTION:
 This project was initiated by utilizing web scraping techniques to scrape README files from specified GitHub repositories focused on Life Expectancy projects. The 166 most starred Life Expectancy Repositories, as of May 14, 2022, were used as the documents within the corpus for this NLP project.
 
-After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds and bigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files.
+After acquiring and preparing the corpus, our team conducted natural language processing exploration utilizing methods such as word clouds and bigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files.
  
 
 #### 3. FORMULATING HYPOTHESES
-The initial hypothesis of the project was that repositories using Python would have a higher average word count in comparison to other programming languages. The thought behind this was Python is known for its focus on consistent documentation and has a robust community to support consistent expectations for documentation. We also thought programing languages would have distinct unique words and bigrams (word pairs) that would differentiate one from the other. These thoughts and the subsequent hypothesis drove the initial exploratory questions for this project.
+The initial hypothesis of the project was repositories using Python would have a higher average word count in comparison to other programming languages. The thought behind this was Python is known for its focus on documentation and has a robust community to support consistent expectations for documentation. We also thought programing languages would have distinct unique words and bigrams (word pairs) that would differentiate one from the other. These thoughts and the subsequent hypothesis drove the initial exploratory questions for this project.
 
 
 #### 4.INITIAL QUESTIONS:
