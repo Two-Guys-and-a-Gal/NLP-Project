@@ -91,6 +91,12 @@ The focus of the project is on identifying the programming language within GitHu
   
 #### 5. KEY FINDINGS:
 The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
+
+Ultimately, our hypothesis that Python README documents would have a higher average word count in comparison to other programming languages was incorrect. As we discovered through exploration, the R programming language README documents had the highest average word count. This could be because R is typically used for academia which may have higher standards for documentation. 
+
+Exploration revealed the 5 most frequently occurring words within the train corpus are: year, country, expectancy, life and data. It also identified Python had considerably more unique individual words and considerably more unique bigrams within the README files in comparison to the other top languages. When looking at bigrams unique to each of the top 4 programming languages, 'Other' seemed to focus on the features of the corpus itself, while Python README files focused on machine learning elements, HTML had file type and summary statistic references, and R utilized bigrams associated with scientific notation and R Programming statistical analysis methods. Lastly, the R language had the highest average word count within the README documents. 
+
+A lot of feature engineering was completed prior to modeling in an attempt to create a higher performing model, however our best performing models were made with TF-IDF and Logistic Regression. TF-IDF takes into acount the word frequency within each document vs the overall frequency of the total corpus. Logistic Regression outperformed the other models in terms of accuracy.
  
 #### 6. DELIVERABLES:
 - [x] README file - provides an overview of the project and steps for project reproduction
