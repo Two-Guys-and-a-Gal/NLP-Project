@@ -422,15 +422,6 @@ def bigram_count(bigrams, language):
     return count
 
 
-# add bigram counts to main df
-df["bigrams"] = df.more_clean.apply(
-    lambda x: pd.Series(nltk.ngrams(x.split(), 2)).values
-)
-df["python_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "Python"))
-df["html_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "HTML"))
-df["r_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "R"))
-df["other_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "Other"))
-
 
 def baseline_accuracy2(series, mode):
     """
@@ -440,6 +431,8 @@ def baseline_accuracy2(series, mode):
     test["mode"] = mode
     baseline_accuracy = accuracy_score(test["language"], test["mode"])
     return baseline_accuracy
+
+
 
 
 ###############################################################################
@@ -453,6 +446,15 @@ def run_models_on_feature_engineered_columns(df, scale=True, bigrams_only=False)
     """
     Run models on data varying solver and C value
     """
+    # add bigram counts to main df
+    df["bigrams"] = df.more_clean.apply(
+        lambda x: pd.Series(nltk.ngrams(x.split(), 2)).values
+    )
+    df["python_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "Python"))
+    df["html_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "HTML"))
+    df["r_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "R"))
+    df["other_bigrams"] = df.bigrams.apply(lambda x: bigram_count(x, "Other"))
+
     # split data into train, validate, and test sets
     train, validate, test = prepare.split_data(df)
     y_train = train.language
