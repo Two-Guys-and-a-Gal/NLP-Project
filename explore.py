@@ -56,7 +56,7 @@ def get_common_unique_words(text, threshold=5):
     """
     #splitting text into individual words
     words = text.split()
-    #using nltk.counter to count ngrams
+    #using collections to get an ngrams count 
     counter = Counter(words)
     #Create a list with all of the unique words using our default threshold of at least 5
     common_unique_words = [
