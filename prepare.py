@@ -39,8 +39,11 @@ def get_unique_words(text):
     Get unique words in dataframe
     """
 
+    # Create a list of words separated by a space
     words = text.split()
+    # Create a variable to hold a list of unique words
     unique_words = set(words)
+    # Join unique words list with a new string
     new_string = " ".join(unique_words)
     return new_string
 
@@ -50,8 +53,11 @@ def get_unique_word_count(string):
     This function will take in a string and return the number of unique words in that string.
     """
 
+    # Create a list of words separated by a space
     words = string.split()
+    # Create a variable to hold a list of unique words
     words = set(words)
+    # Calculate and return the length of the list
 
     return len(words)
 
@@ -60,9 +66,9 @@ def get_sentence_count(string):
     """
     This function will take in a string and return the number of sentences in that string.
     """
-
+    #Create a list of sentences using nltk 
     sentences = nltk.sent_tokenize(string)
-
+    #Calculate and return length of the list
     return len(sentences)
 
 
@@ -70,10 +76,14 @@ def n_most_common_word(string, n=1):
     """
     Return the nth most common word in a string
     """
+    # Create a list of words separated by a space
     words = string.split()
+    # Make an if statement that will only show the nth most common word based on the value set for n
     if len(words) < n:
         return ""
+    # Use collections to get an ngram count
     word_counts = Counter(words)
+    # Return only the most common 
     return word_counts.most_common(n)[n - 1][0]
 
 
@@ -82,21 +92,22 @@ def n_most_common_word(string, n=1):
 
 def basic_clean(text):
     """
-    Basic cleaning of text
+    This function will take in a string and perform basic cleaning functions. It reduces all characters
+    to lower case, normalizes unicode characters, and removes anything that is not a letter or whitespace. 
     """
+    # Normalize unicode characters
     text = (
         unicodedata.normalize("NFKD", text)
-        .encode("ascii", "ignore")
-        .decode("utf-8", "ignore")
+        .encode("ascii", "ignore") #encode into ascii byte strings, and ingnore unknown characers.
+        .decode("utf-8", "ignore") #decode back into a workable utf-8 string
     )
-    ##text = re.sub(r"[^\w\s]", " ", text).lower()
-    text = re.sub(r"[^a-zA-Z\s]", "", text).lower()
+    text = re.sub(r"[^a-zA-Z\s]", "", text).lower() #Removes anything not a letter or white space and lowercases everything
     return text
 
 
 def tokenize(text):
     """
-    Tokenize text
+    This function will take in a string, tokenize all words and return the tokenized string.
     """
     tokenizer = ToktokTokenizer()
     tokens = tokenizer.tokenize(text)
@@ -105,20 +116,23 @@ def tokenize(text):
 
 def stem(tokens, use_tokens=False):
     """
-    Stem tokens
+    This function will take in a tokenized string and and return a stemmed version of that text. Includes a use_tokens paramater.
     """
+    # Create the tokenizer
     stemmer = nltk.PorterStemmer()
+    # Use the tokenizer
     if use_tokens:
         stems = [stemmer.stem(token) for token in tokens]
     else:
         stems = [stemmer.stem(token) for token in tokens.split()]
+    # Join the string w
     string = " ".join(stems)
     return string
 
 
 def lemmatize(tokens, use_tokens=False):
     """
-    Lemmatize tokens
+    This function will take in a tokenized string and return a lemmatized version. Includes a use tokens paramater.
     """
     lemmatizer = nltk.stem.WordNetLemmatizer()
     if use_tokens:
