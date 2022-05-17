@@ -66,9 +66,9 @@ def get_sentence_count(string):
     """
     This function will take in a string and return the number of sentences in that string.
     """
-    #Create a list of sentences using nltk 
+    # Create a list of sentences using nltk
     sentences = nltk.sent_tokenize(string)
-    #Calculate and return length of the list
+    # Calculate and return length of the list
     return len(sentences)
 
 
@@ -83,7 +83,7 @@ def n_most_common_word(string, n=1):
         return ""
     # Use collections to get an ngram count
     word_counts = Counter(words)
-    # Return only the most common 
+    # Return only the most common
     return word_counts.most_common(n)[n - 1][0]
 
 
@@ -98,10 +98,14 @@ def basic_clean(text):
     # Normalize unicode characters
     text = (
         unicodedata.normalize("NFKD", text)
-        .encode("ascii", "ignore") #encode into ascii byte strings, and ingnore unknown characers.
-        .decode("utf-8", "ignore") #decode back into a workable utf-8 string
+        .encode(
+            "ascii", "ignore"
+        )  # encode into ascii byte strings, and ingnore unknown characers.
+        .decode("utf-8", "ignore")  # decode back into a workable utf-8 string
     )
-    text = re.sub(r"[^a-zA-Z\s]", "", text).lower() #Removes anything not a letter or white space and lowercases everything
+    text = re.sub(
+        r"[^a-zA-Z\s]", "", text
+    ).lower()  # Removes anything not a letter or white space and lowercases everything
     return text
 
 
@@ -114,52 +118,48 @@ def tokenize(text):
     return tokens
 
 
-def stem(tokens, use_tokens=False):
+def stem(text):
     """
-    This function will take in a tokenized string and and return a stemmed version of that text. Includes a use_tokens paramater.
+    This function will take in a string and and return a stemmed version of that text. 
     """
-    # Create the tokenizer
+    # Create the stemmer
     stemmer = nltk.PorterStemmer()
-    # Use the tokenizer
-    if use_tokens:
-        stems = [stemmer.stem(token) for token in tokens]
-    else:
-        stems = [stemmer.stem(token) for token in tokens.split()]
+    # Use the stemmer to stem the text
+    stems = [stemmer.stem(token) for token in text.split()]
     # Join the string w
     string = " ".join(stems)
     return string
 
 
-def lemmatize(tokens, use_tokens=False):
+def lemmatize(text):
     """
-    This function will take in a tokenized string and return a lemmatized version. Includes a use tokens paramater.
+    This function will take in a tokenized string and return a lemmatized version. 
     """
+    # Create the lemmatizer
     lemmatizer = nltk.stem.WordNetLemmatizer()
-    if use_tokens:
-        lemmas = [lemmatizer.lemmatize(token) for token in tokens]
-    else:
-        lemmas = [lemmatizer.lemmatize(token) for token in tokens.split()]
+    # Use the lemmatizer to lemmatize the text
+    lemmas = [lemmatizer.lemmatize(token) for token in text.split()]
     string = " ".join(lemmas)
     return string
 
 
-def remove_stopwords(
-    tokens, extra_stopwords=[], exclude_stopwords=[], use_tokens=False
-):
+def remove_stopwords(text, extra_stopwords=[], exclude_stopwords=[]):
     """
-    Remove stopwords from tokens
+    Remove stopwords from text
     """
+    # Create a list of stopwords
     stop_words = stopwords.words("english")
+    # Add extra stopwords to the list
     stop_words = set(stop_words).union(set(extra_stopwords))
+    # Remove stopwords from the text
     stop_words = set(stop_words) - set(exclude_stopwords)
-    if use_tokens:
-        tokens = [token for token in tokens if token not in stop_words]
-        return tokens
-    else:
-        words = tokens.split()
-        filtered_words = [word for word in words if word not in stop_words]
-        string_without_stopwords = " ".join(filtered_words)
-        return string_without_stopwords
+    # resplit the text
+    words = text.split()
+    # filter out the stopwords
+    filtered_words = [word for word in words if word not in stop_words]
+    # join the filtered words
+    string_without_stopwords = " ".join(filtered_words)
+    return string_without_stopwords
 
 
 def more_clean(text):
