@@ -2,7 +2,7 @@ THE LANGUAGE of LIFE EXPECTANCY:
 
 A Natural Language Processing Approach to Evaluating GitHub Repository Content Programming Language
 
-[Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing)
+#### [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing)
 ===
         
 Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeup   |   Innis Cohort   |   May 2022
