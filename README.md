@@ -1,7 +1,8 @@
 THE LANGUAGE of LIFE EXPECTANCY: 
 
 A Natural Language Processing Approach to Evaluating GitHub Repository Content Programming Language
- 
+
+[Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing)
 ===
         
 Team Members: Chris Teceno, Rachel Robbins-Mayhill, Kristofer Rivera   |   Codeup   |   Innis Cohort   |   May 2022
@@ -22,8 +23,8 @@ Table of Contents
 * I. [Project Overview](#i-project-overview)<br>
 [1. Goal](#1-goal)<br>
 [2. Description](#2-description)<br>
-[3. Initial Questions](#3initial-questions)<br>
-[4. Formulating Hypotheses](#4-formulating-hypotheses)<br>
+[3. Formulating Hypotheses](#3-formulating-hypotheses)<br>
+[4. Initial Questions](#4initial-questions)<br>
 [5. Key Findings](#5-key-findings)<br>
 [6. Deliverables](#6-deliverables)<br>
 * II. [Project Data Context](#ii-project-data-context)<br>
@@ -51,15 +52,19 @@ This project was initiated by utilizing web scraping techniques to scrape README
 
 After acquiring and preparing the corpus, our team conducted natural language processing exploration methods such as word clouds and bigrams. We employed multiclass classification methods to create multiple machine learning models. The end goal was to create an NLP model that accurately predicted the programming language used in a GitHub repository based on the words and word combinations found in the readme files.
  
- 
-#### 3.INITIAL QUESTIONS:
+
+#### 3. FORMULATING HYPOTHESES
+The initial hypothesis of the project was that repositories using Python would have a higher average word count in comparison to other programming languages. The thought behind this was Python is known for its focus on consistent documentation and has a robust community to support consistent expectations for documentation. We also thought programing languages would have distinct unique words and bigrams (word pairs) that would differentiate one from the other. These thoughts and the subsequent hypothesis drove the initial exploratory questions for this project.
+
+
+#### 4.INITIAL QUESTIONS:
 The focus of the project is on identifying the programming language within GitHub repositories. Below are some of the initial questions this project looks to answer throughout the Data Science Pipeline.
  
  
 ##### Data-Focused Questions
 - What are the most frequently occuring words?
 - Are there any words that uniquely identify one of the coding langauges?
-- What are the most frequently occuring bigrams?
+- What are the most frequently occuring bigrams (pairs of words)?
 - Are there any bigrams that uniquely identify one of the coding langauges?
 - Is word count within the README significantly different between the top 4 programming langauges?
  
@@ -83,10 +88,7 @@ The focus of the project is on identifying the programming language within GitHu
 - How will we know it's good enough?
    + If the exploratory process delivers data-backed insights and the modeling process produces a model to perform better than baseline. 
  
- 
-#### 4. FORMULATING HYPOTHESES
-The initial hypothesis of the project was that repositories using Python would have a higher average word count in comparison to other programming languages. The thought behind this was Python is known for its focus on consistent documentation and has a robust community to support consistent expectations for documentation. We also thought programing languages would have distinct unique words and bigrams (word pairs) that would differentiate one from the other. These thoughts and the subsequent hypothesis drove the initial exploratory questions for this project.
-
+  
 #### 5. KEY FINDINGS:
 The key findings for this presentation are available in slide format by clicking on the [Final Slide Presentation](https://docs.google.com/presentation/d/1nCXdPCZY16jplddBFYq8YxPd1t2k0y3LHmHjmiocjGQ/edit?usp=sharing).
  
@@ -183,19 +185,25 @@ Using Jupyter Notebook:
      - [x]  Identify any potential data integrity issues
 - [x]  Document findings
 - [x]  Summarize conclusions, provide clear answers, and summarize takeaways
-     - [x] Explain plan of action as deduced from work to this point
+     - [x] Explain plan of action as deduced from work to this point    
+- [x]  Create prepare functions within explore.py
+- [x]  Store functions needed to explore the GitHub Repository Corpus in explore.py
+- [x]  Ensure all imports needed to run the explore functions are added to the explore.py document
  
 #### 5. MODEL & EVALUATE
 Using Jupyter Notebook:
-- [x] Establish baseline accuracy
-- [x] Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
-- [x] Compare evaluation metrics across models
-- [x] Remove unnecessary features
-- [x] Evaluate best performing models using validate set
-- [x] Choose best performing validation model for use on test set
-- [x] Test final model on out-of-sample testing corpus
-- [x] Summarize performance
-- [x] Interpret and document findings
+- [x]  Establish baseline accuracy
+- [x]  Train and fit multiple (3+) models with varying algorithms and/or hyperparameters
+- [x]  Compare evaluation metrics across models
+- [x]  Remove unnecessary features
+- [x]  Evaluate best performing models using validate set
+- [x]  Choose best performing validation model for use on test set
+- [x]  Test final model on out-of-sample testing corpus
+- [x]  Summarize performance
+- [x]  Interpret and document findings
+- [x]  Create prepare functions within model.py
+- [x]  Store functions needed to model the GitHub Repository Corpus in model.py
+- [x]  Ensure all imports needed to run the model functions are added to the model.py document
  
 
 #### 6. DELIVERY
@@ -217,8 +225,9 @@ Using Jupyter Notebook:
  
  
 ## IV. PROJECT MODULES:
-- [x] wrangle.py - provides reproducible python code to automate acquiring, 
+- [x] wrangle.py - provides reproducible python code to automate acquisition 
 - [x] prepare.py - provides reproducible python code to automate cleaning, preparing, and splitting the corpus
+- [x] explore.py - provides reproducible python code to automate exploration and visualization
   
 ## V. PROJECT REPRODUCTION:
 ### Steps to Reproduce
